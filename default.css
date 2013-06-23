@@ -17,6 +17,11 @@ h1, h2, h3 {
 	padding: 0;
 }
 
+h5 {
+	margin: 0;
+	padding: 0;	
+	text-align:center;
+}
 
 p, ol, ul {
 	margin-top: 0px;
