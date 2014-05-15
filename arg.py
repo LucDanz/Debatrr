@@ -5,4 +5,4 @@ app = Flask(__name__)
 
 @app.route('/')
 def arg():
-    return "hello world"
+    return "hello args"
