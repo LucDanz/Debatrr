@@ -65,8 +65,42 @@ class User(db.Model):
 	id = db.Column(db.Integer, primary_key=True)
 	name = db.Column(db.String(30))
 	email = db.Column(db.String(50))
-	pass = db.Column(db.String(200))
+	password = db.Column(db.String(200))
 	salt = db.Column(db.String(100))
+
+	def __init__(self, name, email, password, salt="235adf*F&F&A&@(afdt"):
+		self.name = name
+		self.email = email
+		self.password = password
+		self.salt = salt
+
+	def is_authenticated(self):
+		return True
+
+	def is_active(self):
+		return True
+
+	def is_anonymous(self):
+		return False
+
+	def get_id(self):
+		return unicode(self.id)
+
+	def __repr__(self):
+		return '<User %r>' % (self.name)
+
+
+class Comment(db.Model):
+	id = db.Column(db.Integer, primary_key=True)
+	cType = db.Column(db.String(40))
+	cRefID = db.Column(db.Integer)
+	cText = db.Column(db.Text)
+
+	def __init__(self, ctype, refID, text):
+		self.cType = ctype
+		self.cRefID = refID
+		self.cText = text
+
 
 
 
