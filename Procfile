@@ -1,1 +1,1 @@
-web: gunicorn arg:app
+web: python main.py -i json-rpc
