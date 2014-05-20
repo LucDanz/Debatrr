@@ -2,6 +2,9 @@ import os
 from flask import Flask
 from flask.ext.sqlalchemy import SQLAlchemy
 import datetime
+import bcrypt
+
+
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
@@ -68,11 +71,20 @@ class User(db.Model):
 	password = db.Column(db.String(200))
 	salt = db.Column(db.String(100))
 
-	def __init__(self, name, email, password, salt="235adf*F&F&A&@(afdt"):
+	def __init__(self, name, email, password):
 		self.name = name
 		self.email = email
-		self.password = password
-		self.salt = salt
+		#self.password = password
+		self.set_password(self, password)
+	
+	def set_password(self, password):
+		self.pw_hash = bcrypt.hashpw(password, bcrypt.gensalt())
+
+	def check_password(self, password):
+		if bcrypt.hashpw(password, self.pw_hash) == self.pw_hash:
+			return True
+		else:
+			return False
 
 	def is_authenticated(self):
 		return True
