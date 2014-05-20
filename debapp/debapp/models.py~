@@ -3,7 +3,6 @@ from flask import Flask
 from flask.ext.sqlalchemy import SQLAlchemy
 import datetime
 import bcrypt
-from debapp import app
 
 
 app = Flask(__name__)
