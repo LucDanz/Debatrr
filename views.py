@@ -17,3 +17,8 @@ def login():
         title = 'Sign In',
         form = form,
         providers = app.config['OPENID_PROVIDERS'])
+
+@app.route('/dashboard')
+@login_required
+def dashboard():
+	flash("this is the dashboard")

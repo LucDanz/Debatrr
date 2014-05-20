@@ -11,7 +11,7 @@ def login():
     form = LoginForm()
     if form.validate_on_submit():
         #validate
-	login_user(user)
+	#login_user(user)
 	flash("Logged in successfully")
     return render_template('login.html', 
         title = 'Sign In',

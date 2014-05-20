@@ -11,3 +11,5 @@ from app import views
 @app.route('/index')
 def arg():
     return "hello args"
+
+
