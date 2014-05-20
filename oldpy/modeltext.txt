@@ -1,0 +1,26 @@
+Resolutions
+resID, resName, fullRes, category(ies)
+
+
+Debate
+debID, debateName, debateProTeamID, debateConTeamID, date
+
+Team
+teamID, teamName, memberlist (comma delimited list of memberIDs)
+
+Member
+memID, memName, email, pass
+
+
+Argument 
+argID, debID, teamID, argText, argType, relatedArgID (if arg type is counter or supporting)
+
+supporting argument DB? or a supporting/main arg flag?
+
+Fact
+FactID, argID, FactText,FactLink
+
+Comment
+commID, commType (on a Fact, argument, resolution?, etc), commRefID (lookup based on the previous type), commText
+
+
