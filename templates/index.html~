@@ -3,5 +3,8 @@
 
 {% block content %}
 These are some example debates
-<a href='login.html'>Login</a>
+<br><BR>
+<a href='login'>Login</a>
+<BR><BR>
+
 {% endblock %}
