@@ -1,2 +1,2 @@
-from Debatrr import app
+from debatr import app
 app.run(debug=True)
