@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
+{% block title %} Index {% endblock %}
 
 {% block content %}
 These are some example debates
+<a href='login.html'>Login</a>
 {% endblock %}
