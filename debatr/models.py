@@ -16,7 +16,7 @@ class Resolution(db.Model):
 	full = db.Column(db.String(200))
         category = db.Column(db.String(200))
 
-        def __init__(self, name, full, cat)
+        def __init__(self, name, full, cat):
 		self.name = name
 		self.full = full
 		self.category = cat
@@ -29,7 +29,7 @@ class Argument(db.Model):
         argType = db.Column(db.String(200))
         relatedArgID = db.Column(db.Integer)
 
-        def __init__(self,debID, teamID, text, argType, raID)
+        def __init__(self,debID, teamID, text, argType, raID):
 		self.debID = debID
                 self.teamID = teamID
                 self.text = text
@@ -63,6 +63,11 @@ class Fact(db.Model):
 	argID = db.Column(db.Integer)
 	text = db.Column(db.Text)
 	link = db.Column(db.String(100))
+
+	def __init__(self, arg, text, link):
+		self.argID = arg
+		self.text = text
+		self.link = link
 
 class User(db.Model):
 	id = db.Column(db.Integer, primary_key=True)
