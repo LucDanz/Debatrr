@@ -4,7 +4,7 @@ import datetime
 import bcrypt
 from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.login import LoginManager
-
+from flask import render_template
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
@@ -12,6 +12,14 @@ db = SQLAlchemy(app)
 login_manager = LoginManager()
 login_manager.init_app(app)
 
+
+@app.route('/')
+@app.route('/index')
+def index():
+	return render_template('index.html')
+
+
+"""
 
 class Resolution(db.Model):
 	id = db.Column(db.Integer, primary_key=True)
@@ -130,4 +138,6 @@ def login():
 @app.route('/index')
 def arg():
     return "hello args"
+
+"""
 
