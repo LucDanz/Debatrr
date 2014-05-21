@@ -13,7 +13,7 @@ db = SQLAlchemy(app)
 class Resolution(db.Model):
 	id = db.Column(db.Integer, primary_key=True)
 	name = db.Column(db.String(40))
-	full = db.Column(db.String(200)
+	full = db.Column(db.String(200))
         category = db.Column(db.String(200))
 
         def __init__(self, name, full, cat)
@@ -114,18 +114,6 @@ class Comment(db.Model):
 		self.cText = text
 
 
-@lm.user_loader
-def load_user(id):
-	return User.query.get(int(id))
 
-@app.route('/login', methods=['GET', 'POST'])
-def login():
-	form = LoginForm()
-
-
-@app.route('/')
-@app.route('/index')
-def arg():
-    return "hello args"
 
 
