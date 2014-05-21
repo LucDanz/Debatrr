@@ -14,36 +14,36 @@ class Resolution(db.Model):
 	id = db.Column(db.Integer, primary_key=True)
 	name = db.Column(db.String(40))
 	full = db.Column(db.String(200))
-        category = db.Column(db.String(200))
+    	category = db.Column(db.String(200))
 
-        def __init__(self, name, full, cat)
+	def __init__(self, name, full, cat):
 		self.name = name
 		self.full = full
 		self.category = cat
 
 class Argument(db.Model):
 	id = db.Column(db.Integer, primary_key=True)
-        debID = db.Column(db.Integer)
-        teamID = db.Column(db.Integer)
-        text = db.Column(db.Text)
-        argType = db.Column(db.String(200))
-        relatedArgID = db.Column(db.Integer)
+	debID = db.Column(db.Integer)
+	teamID = db.Column(db.Integer)
+	text = db.Column(db.Text)
+	argType = db.Column(db.String(200))
+	relatedArgID = db.Column(db.Integer)
 
-        def __init__(self,debID, teamID, text, argType, raID)
+    def __init__(self,debID, teamID, text, argType, raID):
 		self.debID = debID
-                self.teamID = teamID
-                self.text = text
-                self.argType = argType
-                self.relatedArgID = raID
+        self.teamID = teamID
+        self.text = text
+        self.argType = argType
+        self.relatedArgID = raID
 
 class Debate(db.Model):
-        id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True)
 	name = db.Column(db.String(100))
-        proTeamID = db.Column(db.Integer)
-        conTeamID = db.Column(db.Integer)
-        date = db.Column(db.DateTime)
+    proTeamID = db.Column(db.Integer)
+    conTeamID = db.Column(db.Integer)
+    date = db.Column(db.DateTime)
 
-        def __init__(self, name, proID, conID, date=datetime.datetime.now()):
+    def __init__(self, name, proID, conID, date=datetime.datetime.now()):
 		self.name = name
 		self.proTeamID = proID
 		self.conTeamID = conID
@@ -63,6 +63,11 @@ class Fact(db.Model):
 	argID = db.Column(db.Integer)
 	text = db.Column(db.Text)
 	link = db.Column(db.String(100))
+
+	def __init__(self, arg, text, link):
+		self.argID = arg
+		self.text = text
+		self.link = link
 
 class User(db.Model):
 	id = db.Column(db.Integer, primary_key=True)
