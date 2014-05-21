@@ -7,7 +7,7 @@ from flask.ext.login import LoginManager
 from flask import render_template
 
 app = Flask(__name__)
-import debapp.views
+import debatr.views
 
 #app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
 #db = SQLAlchemy(app)

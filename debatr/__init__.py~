@@ -7,24 +7,12 @@ from flask.ext.login import LoginManager
 from flask import render_template
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
-db = SQLAlchemy(app)
+import debapp.views
+
+#app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
+#db = SQLAlchemy(app)
 #login_manager = LoginManager()
 #login_manager.init_app(app)
-
-
-@app.route('/')
-@app.route('/index')
-def index():
-	return render_template('index.html')
-
-@app.route('/login')
-def login():
-	return render_template('login.html')
-
-@app.route('/debate')
-def debate():
-	return render_template('debate.html')
 
 
 """
