@@ -1,3 +1,10 @@
+import os
+from flask import Flask
+import datetime
+import bcrypt
+from flask.ext.sqlalchemy import SQLAlchemy
+from flask.ext.login import LoginManager
+from flask import render_template
 from debapp import app
 
 @app.route('/')
