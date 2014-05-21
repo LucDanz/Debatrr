@@ -1,1 +1,1 @@
-web: gunicorn debapp:app
+web: gunicorn Debatrr:app
