@@ -2,12 +2,10 @@ import os
 from flask import Flask
 import datetime
 import bcrypt
+from debatr import db
 from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.login import LoginManager
 from debatr import app
-
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
-db = SQLAlchemy(app)
 
 
 class Resolution(db.Model):
