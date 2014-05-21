@@ -1,12 +1,19 @@
 <html>
 <head>
+{% block head %}
 <title>
 {% block title %}{% endblock %} - Debater
 </title>
+{% endblock %}
 </head>
 <body>
 <div id='content'>
 {% block content %}Hello <b>hello</b>{% endblock %}
+</div>
+<div id='footer'>
+{% block footer %}
+Copyright 2014
+{% endblock %}
 </div>
 
 </body>
