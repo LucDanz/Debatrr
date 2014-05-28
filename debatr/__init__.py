@@ -7,7 +7,8 @@ from flask.ext.login import LoginManager
 from flask import render_template
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:////tmp/deb.db"
+app.config.from_object('debatr.config')
+#['SQLALCHEMY_DATABASE_URI'] = "sqlite:////tmp/deb.db"
 db = SQLAlchemy(app)
 
 import debatr.views, debatr.models
