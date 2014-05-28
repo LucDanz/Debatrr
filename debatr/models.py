@@ -36,6 +36,7 @@ class Argument(db.Model):
 
 class Debate(db.Model):
 	id = db.Column(db.Integer, primary_key=True)
+	resID = db.Column(db.Integer)
 	name = db.Column(db.String(100))
 	proTeamID = db.Column(db.Integer)
 	conTeamID = db.Column(db.Integer)
