@@ -78,7 +78,7 @@ class User(db.Model):
 		self.name = name
 		self.email = email
 		#self.password = password
-		self.set_password(self, password)
+		self.set_password( password)
 	
 	def set_password(self, password):
 		self.pw_hash = bcrypt.hashpw(password, bcrypt.gensalt())

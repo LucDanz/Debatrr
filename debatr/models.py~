@@ -2,8 +2,7 @@ import os
 from flask import Flask
 import datetime
 import bcrypt
-from app import db
-from app import app
+from debatr import db
 from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.login import LoginManager
 from debatr import app
