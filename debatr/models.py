@@ -12,7 +12,7 @@ class Resolution(db.Model):
 	id = db.Column(db.Integer, primary_key=True)
 	name = db.Column(db.String(40))
 	full = db.Column(db.String(200))
-    category = db.Column(db.String(200))
+    	category = db.Column(db.String(200))
 
 	def __init__(self, name, full, cat):
 		self.name = name
