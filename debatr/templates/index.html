@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block title %} Home {% endblock %}
+
+{% block content %}
+<div class="search" style="background-color:#D3D3D3;height:40px;width:100%;padding-left:150px;">
+	<div class="logo" style="background-color:#00B2EE;width:60px;height:25px;color:white;float:left;text-align:center;margin-right:10px;margin-top:8px;"> Debatr </div>
+	<input class="question_box" name="search_input" placeholder="Search" value="" autocomplete="off" maxlength="250" autofocus="autofocus" type="text" tabindex="1" style="width:250;height:25;margin-top:8px;float:left;">
+</div>
+
+<div class="left_nav" style="width:150px;height:10000;float:left;margin-left:150px;">
+	<br>
+	<b> Topics </b><br>
+	Trending Debates <br>
+	Open Debates <br>
+	Top Debates <br>
+	<br>
+	<b> Popular Subjects </b><br>
+	Politics <br>
+	Economy <br>
+	Religion <br>
+	...<br>
+</div>
+
+<div class="feed" style="width:750px;float:center;">
+	<div class="debate_feed" style="width:750px;height:200px;">
+		<h3> <a href="p2.html">Proposal: Curiousity killed the cat. </a></h3>
+		<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce interdum ante a viverra lacinia. Duis convallis tortor semper justo imperdiet, et eleifend dolor rhoncus. Fusce nec eleifend risus. Aenean feugiat elementum suscipit. Nam eleifend est eu mauris ultrices laoreet... <a href="link.html"> (more) </a>
+		<div style="width:450px;float:right;border-bottom-color:#D3D3D3;border-bottom-style:solid;border-bottom-width:1px;"></div>
+ 		</p>
+ 	</div>
+ 	<div class="debate_feed" style="width:750px;height:200px;">
+		<h3> <a href="p2.html">Simply getting out from under the dead hand of government, chopping out the bureaucratic deadwood--that's worth a <em>lot</em>. </a></h3>
+		<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce interdum ante a viverra lacinia. Duis convallis tortor semper justo imperdiet, et eleifend dolor rhoncus. Fusce nec eleifend risus. Aenean feugiat elementum suscipit. Nam eleifend est eu mauris ultrices laoreet... <a href="link.html"> (more) </a>
+		<div style="width:450px;float:right;border-bottom-color:#D3D3D3;border-bottom-style:solid;border-bottom-width:1px;"></div>
+ 		</p>
+ 	</div>
+ 	<div class="debate_feed" style="width:750px;height:200px;">
+		<h3> <a href="p3.html"> Proposal: Regulation, not taxation currently creates the most friction to value creation.</a> </h3>
+		<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce interdum ante a viverra lacinia. Duis convallis tortor semper justo imperdiet, et eleifend dolor rhoncus. Fusce nec eleifend risus. Aenean feugiat elementum suscipit. Nam eleifend est eu mauris ultrices laoreet... <a href="link.html"> (more) </a>
+		<div style="width:450px;float:right;border-bottom-color:#D3D3D3;border-bottom-style:solid;border-bottom-width:1px;"></div>
+ 		</p>
+ 	</div>
+ 	<div class="debate_feed" style="width:750px;height:200px;">
+		<h3> <a href="link2.html"> Proposal: Something else interesting...</a> </h3>
+		<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce interdum ante a viverra lacinia. Duis convallis tortor semper justo imperdiet, et eleifend dolor rhoncus. Fusce nec eleifend risus. Aenean feugiat elementum suscipit. Nam eleifend est eu mauris ultrices laoreet... <a href="link.html"> (more) </a>
+		<div style="width:450px;float:right;border-bottom-color:#D3D3D3;border-bottom-style:solid;border-bottom-width:1px;"></div>
+ 		</p>
+ 	</div>
+
+{% endblock %}

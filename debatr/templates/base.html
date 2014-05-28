@@ -1,0 +1,21 @@
+<html>
+<head>
+{% block head %}
+<link rel="stylesheet" href="../static/style.css">
+<title>
+{% block title %}{% endblock %} - Debater
+</title>
+{% endblock %}
+</head>
+<body>
+<div id='content'>
+{% block content %}Hello <b>hello</b>{% endblock %}
+</div>
+<div id='footer'>
+{% block footer %}
+Copyright 2014
+{% endblock %}
+</div>
+
+</body>
+</html>
