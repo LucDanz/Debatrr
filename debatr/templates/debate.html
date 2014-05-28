@@ -4,12 +4,28 @@
 {% block content %}
 This is a debate page
 <br>
-<table> 
-<tr><td> Resolved: This debate is serious and important</td></tr>
-<tr> <td><b>Pro</b> </td> <td><b>Con</b></td> </tr>
-<tr><td>This is the opening statement<br><br></td><td>But this opener is better!</td></tr>
-<tr><td>This is the first argument</td><td> This is MY first argument</td></tr>
+<div id="Resolution">
+{{resolution.full}}
+</div>
+<div id="debate">
+<div id="pro">
+<ul>
+<li>Pro: {{pro.name}}
+{% for arg in proarg %}
+<li>{{arg.text}}
+{% endfor %}
+</ul>
+</div>
+<div id="con">
+<ul>
+<li>Con: {{con.name}}
+{% for arg in conarg %}
+<li>{{arg.text}}
+{% endfor %}
+</ul>
+</div>
 
-</table>
+</div>
+
 
 {% endblock %}
