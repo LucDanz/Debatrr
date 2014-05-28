@@ -12,7 +12,7 @@ class Resolution(db.Model):
 	id = db.Column(db.Integer, primary_key=True)
 	name = db.Column(db.String(40))
 	full = db.Column(db.String(200))
-    	category = db.Column(db.String(200))
+    category = db.Column(db.String(200))
 
 	def __init__(self, name, full, cat):
 		self.name = name
@@ -42,7 +42,8 @@ class Debate(db.Model):
 	conTeamID = db.Column(db.Integer)
 	date = db.Column(db.DateTime)
 
-	def __init__(self, name, proID, conID, date=datetime.datetime.now()):
+	def __init__(self, resID, name, proID, conID, date=datetime.datetime.now()):
+		self.resID = resID
 		self.name = name
 		self.proTeamID = proID
 		self.conTeamID = conID
