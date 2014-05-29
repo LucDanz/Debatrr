@@ -3,21 +3,43 @@ from flask import Flask
 import datetime
 import bcrypt
 from flask.ext.sqlalchemy import SQLAlchemy
-from flask.ext.login import LoginManager
-from flask import render_template
+from flask.ext.login import LoginManager, login_user, logout_user, current_user, login_required
+from flask import render_template, url_for, redirect, flash
 from debatr import app
 from debatr import models
 
 @app.route('/')
 @app.route('/index')
+@login_required
 def index():
 	return render_template('index.html')
 
-@app.route('/login')
+@app.route('/login', methods=['GET', 'POST'])
 def login():
-	return render_template('login.html')
-
+	if request.method == 'GET':
+		return render_template('login.html')
+	username = request.form['username']
+	password = request.form['password']
+	registered_user = models.User.query.filter_by(name=username).first()
+	if registered_user is None:
+		flash('Username is invalid', 'error')
+		return redirect(url_for('login'))
+	if registered_user.check_password(password):
+		login_user(registered_user)
+		flash("Logged in successfully")
+		return redirect(request.args.get('next') or url_for('index'))
+	else:
+		flash('Password is invalid', 'error')
+		return redirect(url_for('login'))
+		
+		
+@app.route('/logout')
+def logout():
+	logout_user()
+	return redirect(url_for('index'))
+		
 @app.route('/debate')
+@login_required
 def debate():
 	debates = models.Debate.query.limit(1).all()[0]
 	res = models.Resolution.query.filter_by(id=debates.resID).all()[0]

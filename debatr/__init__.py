@@ -14,7 +14,7 @@ db = SQLAlchemy(app)
 import debatr.views, debatr.models
 
 
-#login_manager = LoginManager()
-#login_manager.init_app(app)
+login_manager = LoginManager()
+login_manager.init_app(app)
 
 
