@@ -24,7 +24,7 @@ def login():
 	#if registered_user is None:
 	#	flash('Username is invalid', 'error')
 	#	return redirect(url_for('login'))
-	if registered_user.check_password(password):
+	if registered_user.check_password(password) and registered_user is not None:
 		login_user(registered_user)
 		flash("Logged in successfully")
 		#return redirect(request.args.get('next') or url_for('index'))
