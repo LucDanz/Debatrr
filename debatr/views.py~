@@ -10,18 +10,20 @@ from debatr import models
 
 @app.route('/')
 @app.route('/index')
-@login_required
+#@login_required
 def index():
 	return render_template('index.html')
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+	'''	
 	if request.method == 'GET':
 		return render_template('login.html')
 	
 	username = request.form['username']
 	password = request.form['password']
 	registered_user = models.User.query.filter_by(name=username).first()
+	print registered_user
 	if registered_user is None:
 		flash('Username is invalid', 'error')
 		return redirect(url_for('login'))
@@ -34,6 +36,7 @@ def login():
 		flash('Password is invalid', 'error')
 
 		return redirect(url_for('login'))
+	'''
 	
 
 		
