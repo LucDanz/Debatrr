@@ -27,7 +27,8 @@ def login():
 	if registered_user.check_password(password):
 		login_user(registered_user)
 		flash("Logged in successfully")
-		return redirect(request.args.get('next') or url_for('index'))
+		#return redirect(request.args.get('next') or url_for('index'))
+		return redirect(url_for('index'))
 	else:
 		flash('Username or Password is invalid', 'error')
 		return redirect(url_for('login'))
