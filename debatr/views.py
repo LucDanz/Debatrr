@@ -4,7 +4,7 @@ import datetime
 import bcrypt
 from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.login import LoginManager, login_user, logout_user, current_user, login_required
-from flask import render_template, url_for, redirect, flash
+from flask import render_template, url_for, redirect, flash, request
 from debatr import app
 from debatr import models
 
