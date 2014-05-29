@@ -18,21 +18,25 @@ def index():
 def login():
 	if request.method == 'GET':
 		return render_template('login.html')
+	
 	username = request.form['username']
 	password = request.form['password']
 	registered_user = models.User.query.filter_by(name=username).first()
-	#if registered_user is None:
-	#	flash('Username is invalid', 'error')
-	#	return redirect(url_for('login'))
-	if registered_user.check_password(password) and registered_user is not None:
+	print registered_user
+	if registered_user is None:
+		flash('Username is invalid', 'error')
+		return redirect(url_for('login'))
+		'''if registered_user.check_password(password):
 		login_user(registered_user)
 		flash("Logged in successfully")
 		#return redirect(request.args.get('next') or url_for('index'))
-		return redirect(url_for('index'))
+		return redirect(url_for('index')) '''
 	else:
-		flash('Username or Password is invalid', 'error')
+		flash('Password is invalid', 'error')
+
 		return redirect(url_for('login'))
-		
+	
+
 		
 @app.route('/logout')
 def logout():
