@@ -21,15 +21,15 @@ def login():
 	username = request.form['username']
 	password = request.form['password']
 	registered_user = models.User.query.filter_by(name=username).first()
-	if registered_user is None:
-		flash('Username is invalid', 'error')
-		return redirect(url_for('login'))
+	#if registered_user is None:
+	#	flash('Username is invalid', 'error')
+	#	return redirect(url_for('login'))
 	if registered_user.check_password(password):
 		login_user(registered_user)
 		flash("Logged in successfully")
 		return redirect(request.args.get('next') or url_for('index'))
 	else:
-		flash('Password is invalid', 'error')
+		flash('Username or Password is invalid', 'error')
 		return redirect(url_for('login'))
 		
 		
