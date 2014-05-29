@@ -80,10 +80,11 @@ class User(db.Model):
 		self.name = name
 		self.email = email
 		#self.password = password
-		self.set_password( password)
-	
-	def set_password(self, password):
 		self.pw_hash = bcrypt.hashpw(password, bcrypt.gensalt())
+		#self.set_password( password)
+	
+	#def set_password(self, password):
+	#	self.pw_hash = bcrypt.hashpw(password, bcrypt.gensalt())
 
 	def check_password(self, password):
 		if bcrypt.hashpw(password, self.pw_hash) == self.pw_hash:

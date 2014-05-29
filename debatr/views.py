@@ -39,7 +39,7 @@ def logout():
 	return redirect(url_for('index'))
 		
 @app.route('/debate')
-@login_required
+#@login_required
 def debate():
 	debates = models.Debate.query.limit(1).all()[0]
 	res = models.Resolution.query.filter_by(id=debates.resID).all()[0]
